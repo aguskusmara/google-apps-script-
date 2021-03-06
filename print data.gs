@@ -2,7 +2,7 @@
 function printData() {
   const sheet = SpreadsheetApp.getActive()
   const ws = sheet.getSheetByName('PUT SHEET NAME HERE')
-  const lastRows = getLastRowSpecial(ws.getRange("K7:K").getDisplayValues()) //see helper function
+  const lastRows = getLastRowSpecial(ws.getRange("put range").getDisplayValues()) //see helper function
   const range = ws.getRange(7, 11, lastRows, 4)
   exportCurrentSheetAsPDF(range, ws) //see exportCurrentSheetAsPDF function
   console.log(range)
