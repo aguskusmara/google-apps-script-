@@ -9,7 +9,7 @@ copy this file gs [movedata.gs](https://github.com/aguskusmara/google-apps-scrip
 function moveData() {
   const sheet = SpreadsheetApp.getActive()
   const wsFrom = sheet.getSheetByName('PUT SHEET NAME FROM') //Enter the sheet name that will be moved
-  const lastRow = getLastRowSpecial(wsFrom.getRange('A2:A').getValues()) //see helper function
+  const lastRow = getLastRowSpecial(wsFrom.getRange('put range').getValues()) //see helper function
   const dataFrom = wsFrom.getRange(2, 1, lastRow, 7).getValues() // This is the range of data that will be printed
   const wsTo = sheet.getSheetByName('PUT DESTINATION SHEET NAME') //Enter the sheet name destination
   const range = wsTo.getRange(wsTo.getLastRow(), 1, dataFrom.length, dataFrom[0].length) // This is the destination range
@@ -53,7 +53,7 @@ copy this file gs [printdata.gs](https://github.com/aguskusmara/google-apps-scri
 function printData() {
   const sheet = SpreadsheetApp.getActive()
   const ws = sheet.getSheetByName('PUT SHEET NAME HERE')
-  const lastRows = getLastRowSpecial(ws.getRange("K7:K").getDisplayValues()) //see helper function
+  const lastRows = getLastRowSpecial(ws.getRange("put range").getDisplayValues()) //see helper function
   const range = ws.getRange(7, 11, lastRows, 4)
   exportCurrentSheetAsPDF(range, ws) //see exportCurrentSheetAsPDF function
   console.log(range)
@@ -166,7 +166,7 @@ copy this file gs [install.gs](https://github.com/aguskusmara/google-apps-script
 function onOpen() {
   SpreadsheetApp.getUi()
     .createMenu('APP') //name of menu
-    .addItem('PRINT', 'printData') 
+    .addItem('PRINT', 'printData') //PRINT is name of item & printData is name of function
     .addItem('MOVE DATA','moveData')
     .addToUi()
 }
